@@ -19,7 +19,9 @@ By default, it renders:
   <meta name="ROBOTS" content="NOODP" />
   <meta name="viewport" content="initial-scale=1" />
   <title><%= content_for(:title) %> | <%= Rails.application.class.parent_name.titlecase %></title>
-  <%= stylesheet_link_tag "administrate/application", media: "all" %>
+<% Administrate::Engine.stylesheets.each do |css_path| %>
+   <%= stylesheet_link_tag css_path %>
+ <% end %>
   <%= csrf_meta_tags %>
 </head>
 

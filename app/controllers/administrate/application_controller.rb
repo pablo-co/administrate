@@ -108,7 +108,7 @@ module Administrate
     end
 
     def sanitized_params
-      params.permit([:search, :id, :order, :per_page, :direction])
+      params.permit([:search, :id, :order, :per_page, :direction, :page])
     end
     helper_method :sanitized_params
 
