@@ -5,7 +5,7 @@ rescue LoadError
 end
 
 require 'rdoc/task'
-
+require 'rspec/core/rake_task'
 require File.expand_path('../spec/example_app/config/application', __FILE__)
 
 RDoc::Task.new(:rdoc) do |rdoc|

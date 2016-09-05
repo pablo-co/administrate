@@ -12,6 +12,18 @@ describe Administrate::Generators::DashboardGenerator, :generator do
       expect(dashboard).to have_correct_syntax
     end
 
+    describe 'plain ruby objects' do
+      it 'skips over plain ruby objects because they do not have reflection' do
+        class PlainRubyObject
+          attr_accessor :name, :stage
+        end
+
+        expect do
+          run_generator ["plain_ruby_object"]
+        end.to_not raise_error
+      end
+    end
+
     describe "#attribute_types" do
       it "includes standard model attributes" do
         begin
