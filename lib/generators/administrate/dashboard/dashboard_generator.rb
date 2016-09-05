@@ -117,6 +117,8 @@ module Administrate
         else
           ""
         end
+      rescue
+        ""
       end
 
       def options_string(options)
