@@ -45,6 +45,8 @@ module Administrate
 
       def attributes
         klass.reflections.keys + klass.attribute_names - redundant_attributes
+      rescue
+        []
       end
 
       def form_attributes
